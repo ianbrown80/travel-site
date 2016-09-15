@@ -1,7 +1,7 @@
 .wrapper {
   padding-left: 18px;
   padding-right: 18px;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: auto;
   overflow: hidden;
 
@@ -13,4 +13,15 @@
   &--medium {
     max-width: 976px;
   }
+
+
+
+  &--b-margin {
+    margin-bottom: 1rem;
+
+    @mixin tablet {
+      margin-bottom: 4rem;
+    }
+  }
+
 }
