@@ -1,5 +1,10 @@
 .large-hero {
   position: relative;
+  border-bottom: solid 10px $mainBlue;
+
+  &__image {
+    display: block;
+  }
 
   &__text-content {
     position: absolute;
@@ -13,25 +18,51 @@
   &__title {
     font-weight: 300;
     color: $mainBlue;
-    font-size: 4.8rem;
+    font-size:2.4rem;
     margin: 0;
+    @mixin tablet {
+      font-size: 3.2rem;
+    }
+    @mixin laptop {
+      font-size: 4.0rem;
+    }
+    @mixin desktop {
+      font-size: 4.8rem;
+    }
   }
 
   &__subtitle {
     font-weight: 300;
     color: $mainBlue;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     margin: 0;
+    @mixin tablet {
+      font-size: 2.4rem;
+    }
+    @mixin laptop {
+      font-size: 3.2rem;
+    }
+    @mixin desktop {
+      font-size: 4.0rem;
+    }
   }
 
   &__description {
     font-weight: 100;
     color: #FFF;
-    font-size: 1.875rem;
+    font-size: 0.9rem;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
     max-width: 30rem;
     margin-left: auto;
     margin-right: auto;
+    @mixin tablet {
+      font-size: 1.225rem;
+    }
+    @mixin laptop {
+      font-size: 1.5rem;
+    }
+    @mixin desktop {
+      font-size: 1.875rem;
+    }
   }
-
 }

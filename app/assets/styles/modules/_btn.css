@@ -10,8 +10,12 @@
   }
 
   &--large {
-    font-size: 1.25rem;
-    padding: 1.1rem 1.9rem;
+    padding: 0.8rem 1.6rem;
+
+    @mixin laptop {
+      font-size: 1.25rem;
+        padding: 1.1rem 1.9rem;
+    }
   }
 
 
