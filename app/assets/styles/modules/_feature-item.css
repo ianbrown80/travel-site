@@ -1,15 +1,30 @@
 .feature-item {
-  padding-left: 100px;
   position: relative;
   padding-bottom: 2.5rem;
 
+  @mixin tablet {
+    padding-left: 100px;
+  }
+
   &__icon {
-    position: absolute;
-    left: 0;
+    display: block;
+    margin: 0 auto;
+    @mixin tablet {
+      position: absolute;
+      left: 0;
+    }
   }
   &__title {
-    font-size: 1.875rem;
+    font-size: 1.6rem;
     font-weight: 300;
+    margin-top: 0.7em;
     margin-bottom: 0.8rem;
+    text-align: center;
+
+    @mixin tablet {
+      margin-top: 1em;
+      font-size: 1.875rem;
+      text-align: left;
+    }
   }
 }
