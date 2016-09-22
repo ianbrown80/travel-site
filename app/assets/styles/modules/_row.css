@@ -5,22 +5,37 @@
   &--gutters > div {
     padding-right: 65px;
   }
+  &--gutters-small > div {
+    padding-right: 45px;
+  }
   &--gutters-large > div {
     padding-right: 100px;
   }
-
   &--gutters {
     margin-right: -65px;
+  }
+  &--gutters-small {
+    margin-right: -45px;
   }
   &--gutters-large {
     margin-right: -100px;
   }
-
+  &--t-padding {
+    padding-top: 80px;
+  }
   &__b-margin {
     margin-bottom: 1rem;
   }
-
-  @mixin laptop {
+  &--equal-height-large {
+    @mixin laptop {
+      display: flex;
+    }
+    & > div {
+      float: none;
+      display: flex;
+    }
+  }
+  @mixin tablet {
     &__b-margin {
       margin-bottom: 0;
     }
@@ -28,7 +43,6 @@
       float: left;
       width: 33.33%;
     }
-
     &__medium-5 {
       float: left;
       width: 41.66%;
@@ -41,10 +55,20 @@
       float: left;
       width: 58.33%;
     }
+    &__large-4 {
+      float: left;
+      width: 100%;
+    }
 
     &__medium-8 {
       float: left;
       width: 66.66%;
+    }
+  }
+@mixin laptop {
+    &__large-4 {
+      float: left;
+      width: 33.33%;
     }
   }
 }

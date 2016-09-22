@@ -9,6 +9,15 @@
     padding-left: 0;
     padding-right: 0;
   }
+  &--no-padding-small {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin laptop {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
 
   &--medium {
     max-width: 976px;
