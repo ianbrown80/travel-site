@@ -1,0 +1,54 @@
+.primary-nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    @mixin clearfix;
+
+    li {
+      display: inline-block;
+      list-style: none;
+      padding: 12px 2px;
+
+      @mixin laptop {
+        float: left;
+        display: block;
+        padding: 12px 10px;
+      }
+    }
+
+    li:last-child {
+      padding-right: 0;
+      @mixin laptop {
+        padding-right: 10px;
+      }
+
+    }
+    li:first-child {
+      padding-left: 0;
+      @mixin laptop {
+        padding-left: 10px;
+      }
+    }
+
+
+    a {
+      color: #FFF;
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 0.8rem;
+      padding: 5px 8px;
+      background-color: rgba($mainBlue, 0.55);
+
+      @mixin laptop {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &--right {
+
+    @mixin laptop {
+      float: right;
+    }
+  }
+}
