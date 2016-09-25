@@ -1284,6 +1284,7 @@ a {
 
   .primary-nav ul a {
     background-color: transparent;
+    font-size: 1rem;
   }
 }
 
@@ -1292,4 +1293,18 @@ a {
   .primary-nav--right {
     float: right;
   }
+}
+
+.hide-item {
+  opacity: 0;
+  -webkit-transition: all 1.5s ease-out;
+  transition: all 1.5s ease-out;
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+
+.hide-item--show {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }

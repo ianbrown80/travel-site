@@ -1,0 +1,10 @@
+.hide-item {
+  opacity: 0;
+  transition: all 1.5s ease-out;
+  transform: scale(1.25);
+
+  &--show {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
