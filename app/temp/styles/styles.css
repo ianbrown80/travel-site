@@ -1065,12 +1065,12 @@ a {
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   width: 100%;
   padding: 10px 0;
-  -webkit-transition: background-color 0.3s ease-out;
-  transition: background-color 0.3s ease-out;
+  -webkit-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
 
 }
 
@@ -1078,6 +1078,10 @@ a {
 
   .header {
     background-color: rgba(47,85,114, 0.3);
+  }
+
+  .header--dark {
+    background-color: rgba(47,85,114, 1);
   }
 }
 
@@ -1204,6 +1208,10 @@ a {
   padding: 20px 36px;
   top: 0;
   left: 50%;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
   -webkit-transform: translateX(-50%) scale(0.8);
           transform: translateX(-50%) scale(0.8);
   -webkit-transform-origin: 50% 0;
@@ -1216,6 +1224,11 @@ a {
     left: auto;
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+
+  .header--dark .header__logo {
+    -webkit-transform: scale(0.57);
+            transform: scale(0.57);
   }
 }
 
@@ -1285,6 +1298,10 @@ a {
   .primary-nav ul a {
     background-color: transparent;
     font-size: 1rem;
+  }
+
+  .primary-nav ul a.current-link {
+    color: #fabb69;
   }
 }
 
