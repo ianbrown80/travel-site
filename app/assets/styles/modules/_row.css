@@ -26,7 +26,7 @@
   &__b-margin {
     margin-bottom: 1rem;
   }
-  &--equal-height-large {
+  .flexbox &--equal-height-large {
     @mixin laptop {
       display: flex;
     }

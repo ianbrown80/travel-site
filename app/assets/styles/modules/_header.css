@@ -111,7 +111,7 @@
       left: auto;
       transform: translateX(0);
       .header--dark & {
-        transform: scale(0.57);
+        transform: scale(0.56);
       }
     }
 
