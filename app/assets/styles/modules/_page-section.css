@@ -15,9 +15,11 @@
     padding-bottom: 0;
 
     @mixin tablet {
-      background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
-      background-size: cover;
-      padding-bottom: 4.5rem;
+      &.lazyloaded {
+        background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+        background-size: cover;
+        padding-bottom: 4.5rem;
+      }
     }
   }
 }
