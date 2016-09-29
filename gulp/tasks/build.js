@@ -7,20 +7,20 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     browserSync = require('browser-sync').create();
 
-gulp.task('preview',['deleteDist', 'usemin', 'copyFiles', 'optimiseImages'], function() {
+gulp.task('preview',['deleteDocs', 'usemin', 'copyFiles', 'optimiseImages'], function() {
   browserSync.init({
     notify: false,
     server: {
-      baseDir: "dist"
+      baseDir: "docs"
     }
   });
 });
 
-gulp.task('deleteDist', function() {
-  return del("./dist");
+gulp.task('deleteDocs', function() {
+  return del("./docs");
 });
 
-gulp.task('copyFiles', ['deleteDist'], function() {
+gulp.task('copyFiles', ['deleteDocs'], function() {
 
   var paths = [
     '/app/**/*',
@@ -33,20 +33,20 @@ gulp.task('copyFiles', ['deleteDist'], function() {
     ]
 
   return gulp.src(paths)
-  .pipe(gulp.dest("./dist"));
+  .pipe(gulp.dest("./docs"));
 })
 
-gulp.task('optimiseImages', ['deleteDist', 'icons'], function() {
+gulp.task('optimiseImages', ['deleteDocs', 'icons'], function() {
   return gulp.src(['./app/assets/images/**/*', '!./app/assets/images/icons', '!./app/assets/images/icons/**/*'])
   .pipe(imagemin({
     progressive: true,
     interlaced: true,
     multipass: true
   }))
-  .pipe(gulp.dest('./dist/assets/images'));
+  .pipe(gulp.dest('./docs/assets/images'));
 });
 
-gulp.task('usemin', ['deleteDist', 'styles', 'scripts'], function() {
+gulp.task('usemin', ['deleteDocs', 'styles', 'scripts'], function() {
   return gulp.src("./app/index.html")
   .pipe(usemin({
     css: [function() {
@@ -60,7 +60,7 @@ gulp.task('usemin', ['deleteDist', 'styles', 'scripts'], function() {
       return uglify()
     }]
   }))
-  .pipe(gulp.dest("./dist"));
+  .pipe(gulp.dest("./docs"));
 })
 
-gulp.task('build', ['deleteDist', 'copyFiles', 'usemin', 'optimiseImages', 'preview']);
+gulp.task('build', ['deleteDocs', 'copyFiles', 'usemin', 'optimiseImages', 'preview']);
